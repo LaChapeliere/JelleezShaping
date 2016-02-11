@@ -25,7 +25,6 @@ public class BlobCharacter : Fungus.Character {
 		if (this.isGold != this.wasGold) {
 			this.UpdateProperties();
 		}
-
 	}
 
 	private void UpdateProperties() {	
