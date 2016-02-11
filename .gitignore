@@ -1,6 +1,7 @@
 /[Ww]ebPlayer/
 /[Ww]ebGL/
 /[Ii]JelleezShaping.app/
+/[Jj]elleezShaping_Data/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -20,6 +21,8 @@ ExportedObj/
 *.pidb
 *.booproj
 *.svd
+*.pdb
+*.exe
 
 
 # Unity3D generated meta files
