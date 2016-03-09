@@ -3,7 +3,7 @@ using System.Collections;
 using Fungus;
 
 [ExecuteInEditMode]
-public class BlobCharacter : Fungus.Character {
+public class BlobCharacter : Visible {
 
 	public enum BlobTypes { TypeI=0, TypeII=1, TypeIII=2, TypeIV=3, TypeV=4, TypeVI=5, TypeVII=6 };
 
@@ -17,19 +17,20 @@ public class BlobCharacter : Fungus.Character {
 	private BlobTypes previousBlobType = BlobTypes.TypeIV;
 
 	private Animator animator = null;
-	private SpriteRenderer spriteRenderer = null;
 
 	// Use this for initialization
-	void Start() {
+	public override void Start() {
 		this.spriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
 		this.animator = this.gameObject.GetComponent<Animator>();
 
 		this.UpdateColorProperties();
 		this.UpdateShapeProperties(this.blobType);
+
+		base.Start();
 	}
 
 	// Update is called once per frame
-	void Update() {
+	public override void Update() {
 		if (this.isGold != this.wasGold) {
 			this.UpdateColorProperties();
 		}
@@ -37,6 +38,8 @@ public class BlobCharacter : Fungus.Character {
 		if (this.blobType != this.previousBlobType) {
 			this.UpdateShapeProperties(this.blobType);
 		}
+
+		base.Update();
 	}
 
 	public void SetBlobType(BlobCharacter.BlobTypes blobType) {
